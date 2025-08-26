@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment Guide | StudyHub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1><i class="fas fa-graduation-cap"></i> StudyHub</h1>
+            <p>Your peer learning hub</p>
+        </div>
+        <nav class="nav-buttons">
+            <button class="nav-button" onclick="location.href='index.html'">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </button>
+            <button class="nav-button" onclick="location.href='roadmap.html'">
+                <i class="fas fa-route"></i>
+                <span>Course Roadmaps</span>
+            </button>
+            <button class="nav-button" onclick="location.href='notes.html'">
+                <i class="fas fa-sticky-note"></i>
+                <span>Peer Notes</span>
+            </button>
+            <button class="nav-button active" onclick="location.href='assignments.html'">
+                <i class="fas fa-tasks"></i>
+                <span>Assignment Guide</span>
+            </button>
+            <button class="nav-button" onclick="location.href='playground.html'">
+                <i class="fas fa-code"></i>
+                <span>Coding Playground</span>
+            </button>
+        </nav>
+        <button id="theme-toggle" class="theme-toggle">
+            <i class="fas fa-moon"></i>
+            <span>Dark Mode</span>
+        </button>
+    </header>
+
+    <main class="assignments-container">
+        <div class="page-header">
+            <h1><i class="fas fa-tasks"></i> Assignment Survival Guide</h1>
+            <p class="subtitle">Beat deadlines and ace your projects with effective planning and proven strategies</p>
+        </div>
+
+        <div class="assignment-dashboard">
+            <div class="dashboard-stats">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-list-check"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-number" id="total-tasks">0</span>
+                        <span class="stat-label">Total Tasks</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-number" id="pending-tasks">0</span>
+                        <span class="stat-label">Pending</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-number" id="completed-tasks">0</span>
+                        <span class="stat-label">Completed</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="timeline-container">
+            <div class="timeline-header">
+                <h2><i class="fas fa-timeline"></i> Your Assignment Timeline</h2>
+                <div class="timeline-controls">
+                    <input type="text" id="task-input" placeholder="Add a new task...">
+                    <input type="date" id="task-date">
+                    <select id="task-priority">
+                        <option value="low">Low Priority</option>
+                        <option value="medium" selected>Medium Priority</option>
+                        <option value="high">High Priority</option>
+                    </select>
+                    <button id="add-task">
+                        <i class="fas fa-plus"></i>
+                        Add Task
+                    </button>
+                </div>
+            </div>
+            
+            <div class="timeline-actions">
+                <button id="clear-completed" class="action-btn">
+                    <i class="fas fa-check-double"></i>
+                    Clear Completed
+                </button>
+                <button id="clear-tasks" class="action-btn danger">
+                    <i class="fas fa-trash"></i>
+                    Clear All
+                </button>
+                <button id="export-tasks" class="action-btn">
+                    <i class="fas fa-download"></i>
+                    Export
+                </button>
+            </div>
+
+            <div class="timeline" id="timeline">
+                <div class="timeline-empty" id="timeline-empty">
+                    <i class="fas fa-calendar-plus"></i>
+                    <h3>No assignments yet</h3>
+                    <p>Add your first assignment above to get started with planning</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tips-section">
+            <h2><i class="fas fa-lightbulb"></i> Pro Tips from Students</h2>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Research First</h3>
+                    <p class="tip-quote">"Spend 30% of your time researching before writing - it saves hours later and gives you better direction."</p>
+                    <div class="tip-author">
+                        <i class="fas fa-user"></i>
+                        <span>Priya, CS Senior</span>
+                    </div>
+                </div>
+                
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>The Pomodoro Technique</h3>
+                    <p class="tip-quote">"25 minutes focused work + 5 minute breaks kept me productive for 8-hour sessions without burning out."</p>
+                    <div class="tip-author">
+                        <i class="fas fa-user"></i>
+                        <span>Mark, Engineering</span>
+                    </div>
+                </div>
+                
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Peer Review</h3>
+                    <p class="tip-quote">"Swapping assignments with a friend to review caught 90% of my mistakes before submission."</p>
+                    <div class="tip-author">
+                        <i class="fas fa-user"></i>
+                        <span>Aisha, Biology</span>
+                    </div>
+                </div>
+                
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>Early Start Strategy</h3>
+                    <p class="tip-quote">"Starting assignments the day they're assigned, even just for 15 minutes, makes everything manageable."</p>
+                    <div class="tip-author">
+                        <i class="fas fa-user"></i>
+                        <span>David, Mathematics</span>
+                    </div>
+                </div>
+                
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i class="fas fa-map"></i>
+                    </div>
+                    <h3>Create an Outline</h3>
+                    <p class="tip-quote">"A detailed outline before starting saved me from writer's block and kept my arguments structured."</p>
+                    <div class="tip-author">
+                        <i class="fas fa-user"></i>
+                        <span>Sarah, Literature</span>
+                    </div>
+                </div>
+                
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i class="fas fa-battery-three-quarters"></i>
+                    </div>
+                    <h3>Energy Management</h3>
+                    <p class="tip-quote">"I do my hardest work when my energy is highest - usually mornings - and save easy tasks for later."</p>
+                    <div class="tip-author">
+                        <i class="fas fa-user"></i>
+                        <span>Alex, Physics</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="resources-section">
+            <h2><i class="fas fa-tools"></i> Helpful Resources</h2>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <i class="fas fa-spell-check"></i>
+                    <h3>Writing Tools</h3>
+                    <ul>
+                        <li>Grammarly for grammar checking</li>
+                        <li>Hemingway Editor for clarity</li>
+                        <li>Zotero for citations</li>
+                    </ul>
+                </div>
+                <div class="resource-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Research Tools</h3>
+                    <ul>
+                        <li>Google Scholar for academic papers</li>
+                        <li>Notion for organizing research</li>
+                        <li>Mendeley for reference management</li>
+                    </ul>
+                </div>
+                <div class="resource-card">
+                    <i class="fas fa-focus"></i>
+                    <h3>Focus Apps</h3>
+                    <ul>
+                        <li>Forest for staying focused</li>
+                        <li>Cold Turkey for blocking distractions</li>
+                        <li>Toggl for time tracking</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3><i class="fas fa-graduation-cap"></i> StudyHub</h3>
+                <p>Empowering students through collaborative learning and shared knowledge.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="roadmap.html">Course Roadmaps</a></li>
+                    <li><a href="notes.html">Peer Notes</a></li>
+                    <li><a href="playground.html">Coding Playground</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Connect With Us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-discord"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 StudyHub | Created by Students for Students</p>
+        </div>
+    </footer>
+
+    <script src="assignments.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

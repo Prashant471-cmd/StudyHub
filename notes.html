@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peer Notes | StudyHub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <h1><i class="fas fa-graduation-cap"></i> StudyHub</h1>
+            <p>Your peer learning hub</p>
+        </div>
+        <nav class="nav-buttons">
+            <button class="nav-button" onclick="location.href='index.html'">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </button>
+            <button class="nav-button" onclick="location.href='roadmap.html'">
+                <i class="fas fa-route"></i>
+                <span>Course Roadmaps</span>
+            </button>
+            <button class="nav-button active" onclick="location.href='notes.html'">
+                <i class="fas fa-sticky-note"></i>
+                <span>Peer Notes</span>
+            </button>
+            <button class="nav-button" onclick="location.href='assignments.html'">
+                <i class="fas fa-tasks"></i>
+                <span>Assignment Guide</span>
+            </button>
+            <button class="nav-button" onclick="location.href='playground.html'">
+                <i class="fas fa-code"></i>
+                <span>Coding Playground</span>
+            </button>
+        </nav>
+        <button id="theme-toggle" class="theme-toggle">
+            <i class="fas fa-moon"></i>
+            <span>Dark Mode</span>
+        </button>
+    </header>
+
+    <main class="notes-container">
+        <div class="page-header">
+            <h1><i class="fas fa-sticky-note"></i> Peer Notes Gallery</h1>
+            <p class="subtitle">Discover comprehensive notes shared by top students across various subjects</p>
+        </div>
+
+        <div class="notes-controls">
+            <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" id="note-search" placeholder="Search notes by title, subject, or author...">
+                <button id="search-btn">
+                    <i class="fas fa-search"></i>
+                    Search
+                </button>
+            </div>
+
+            <div class="filter-options">
+                <select id="subject-filter">
+                    <option value="all">All Subjects</option>
+                    <option value="cs">Computer Science</option>
+                    <option value="math">Mathematics</option>
+                    <option value="physics">Physics</option>
+                    <option value="chemistry">Chemistry</option>
+                    <option value="biology">Biology</option>
+                    <option value="engineering">Engineering</option>
+                </select>
+
+                <select id="type-filter">
+                    <option value="all">All Types</option>
+                    <option value="handwritten">Handwritten</option>
+                    <option value="digital">Digital</option>
+                    <option value="mindmap">Mind Maps</option>
+                    <option value="summary">Summaries</option>
+                </select>
+
+                <select id="rating-filter">
+                    <option value="all">All Ratings</option>
+                    <option value="5">5 Stars</option>
+                    <option value="4">4+ Stars</option>
+                    <option value="3">3+ Stars</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="notes-stats">
+            <div class="stat-item">
+                <span id="total-notes">0</span>
+                <label>Total Notes</label>
+            </div>
+            <div class="stat-item">
+                <span id="filtered-notes">0</span>
+                <label>Showing</label>
+            </div>
+        </div>
+
+        <!-- <div id="loading-notes" class="loading-state">
+            <i class="fas fa-spinner fa-spin"></i>
+            <p>Loading notes...</p>
+        </div> -->
+
+        <div class="notes-grid" id="notes-grid">
+            <!-- Notes will be populated by JavaScript -->
+        </div>
+
+        <div id="no-notes" class="no-results" style="display: none;">
+            <i class="fas fa-sticky-note"></i>
+            <h3>No notes found</h3>
+            <p>Try adjusting your search or filter criteria</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3><i class="fas fa-graduation-cap"></i> StudyHub</h3>
+                <p>Empowering students through collaborative learning and shared knowledge.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="roadmap.html">Course Roadmaps</a></li>
+                    <li><a href="assignments.html">Assignment Guide</a></li>
+                    <li><a href="playground.html">Coding Playground</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Connect With Us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-discord"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 StudyHub | Created by Students for Students</p>
+        </div>
+    </footer>
+
+    <!-- Note Detail Modal -->
+    <div id="note-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="note-modal-title"></h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body" id="note-modal-body">
+                <!-- Note content will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script src="notes.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

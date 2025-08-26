@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Roadmaps | StudyHub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <h1><i class="fas fa-graduation-cap"></i> StudyHub</h1>
+            <p>Your peer learning hub</p>
+        </div>
+        <nav class="nav-buttons">
+            <button class="nav-button" onclick="location.href='index.html'">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </button>
+            <button class="nav-button active" onclick="location.href='roadmap.html'">
+                <i class="fas fa-route"></i>
+                <span>Course Roadmaps</span>
+            </button>
+            <button class="nav-button" onclick="location.href='notes.html'">
+                <i class="fas fa-sticky-note"></i>
+                <span>Peer Notes</span>
+            </button>
+            <button class="nav-button" onclick="location.href='assignments.html'">
+                <i class="fas fa-tasks"></i>
+                <span>Assignment Guide</span>
+            </button>
+            <button class="nav-button" onclick="location.href='playground.html'">
+                <i class="fas fa-code"></i>
+                <span>Coding Playground</span>
+            </button>
+        </nav>
+        <button id="theme-toggle" class="theme-toggle">
+            <i class="fas fa-moon"></i>
+            <span>Dark Mode</span>
+        </button>
+    </header>
+
+    <main class="roadmap-container">
+        <div class="page-header">
+            <h1><i class="fas fa-route"></i> Course Roadmaps</h1>
+            <p class="subtitle">Step-by-step guides to ace your courses with structured learning paths</p>
+        </div>
+
+        <div class="course-filters">
+            <button class="filter-btn active" data-filter="all">
+                <i class="fas fa-th"></i> All Courses
+            </button>
+            <button class="filter-btn" data-filter="cs">
+                <i class="fas fa-laptop-code"></i> Computer Science
+            </button>
+            <button class="filter-btn" data-filter="math">
+                <i class="fas fa-calculator"></i> Mathematics
+            </button>
+            <button class="filter-btn" data-filter="eng">
+                <i class="fas fa-cogs"></i> Engineering
+            </button>
+            <button class="filter-btn" data-filter="science">
+                <i class="fas fa-flask"></i> Science
+            </button>
+        </div>
+
+        <div class="search-container">
+            <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" id="roadmap-search" placeholder="Search roadmaps...">
+            </div>
+        </div>
+
+        <div id="loading-roadmaps" class="loading-state">
+            <i class="fas fa-spinner fa-spin"></i>
+            <p>Loading roadmaps...</p>
+        </div>
+
+        <div class="roadmap-grid" id="roadmap-grid">
+            <!-- Roadmap items will be populated by JavaScript -->
+        </div>
+
+        <div id="no-results" class="no-results" style="display: none;">
+            <i class="fas fa-search"></i>
+            <h3>No roadmaps found</h3>
+            <p>Try adjusting your search or filter criteria</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3><i class="fas fa-graduation-cap"></i> StudyHub</h3>
+                <p>Empowering students through collaborative learning and shared knowledge.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="notes.html">Peer Notes</a></li>
+                    <li><a href="assignments.html">Assignment Guide</a></li>
+                    <li><a href="playground.html">Coding Playground</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Connect With Us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-discord"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 StudyHub | Created by Students for Students</p>
+        </div>
+    </footer>
+
+    <!-- Roadmap Detail Modal -->
+    <div id="roadmap-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title"></h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body" id="modal-body">
+                <!-- Modal content will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script src="roadmap.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

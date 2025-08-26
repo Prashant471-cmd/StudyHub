@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Playground | StudyHub</title>
+    
+    <!-- CodeMirror CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/dracula.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/material.min.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1><i class="fas fa-graduation-cap"></i> StudyHub</h1>
+            <p>Your peer learning hub</p>
+        </div>
+        <nav class="nav-buttons">
+            <button class="nav-button" onclick="location.href='index.html'">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </button>
+            <button class="nav-button" onclick="location.href='roadmap.html'">
+                <i class="fas fa-route"></i>
+                <span>Course Roadmaps</span>
+            </button>
+            <button class="nav-button" onclick="location.href='notes.html'">
+                <i class="fas fa-sticky-note"></i>
+                <span>Peer Notes</span>
+            </button>
+            <button class="nav-button" onclick="location.href='assignments.html'">
+                <i class="fas fa-tasks"></i>
+                <span>Assignment Guide</span>
+            </button>
+            <button class="nav-button active" onclick="location.href='playground.html'">
+                <i class="fas fa-code"></i>
+                <span>Coding Playground</span>
+            </button>
+        </nav>
+        <button id="theme-toggle" class="theme-toggle">
+            <i class="fas fa-moon"></i>
+            <span>Dark Mode</span>
+        </button>
+    </header>
+
+    <main class="playground-container">
+        <div class="page-header">
+            <h1><i class="fas fa-code"></i> Coding Playground</h1>
+            <p class="subtitle">Practice coding right in your browser with real-time execution</p>
+        </div>
+
+        <div class="playground-layout">
+            <div class="editor-section">
+                <div class="editor-toolbar">
+                    <div class="toolbar-left">
+                        <select id="language-select">
+                            <option value="javascript">
+                                <i class="fab fa-js"></i> JavaScript
+                            </option>
+                            <option value="python">
+                                <i class="fab fa-python"></i> Python
+                            </option>
+                        </select>
+                        
+                        <select id="theme-select">
+                            <option value="dracula">Dracula</option>
+                            <option value="material">Material</option>
+                            <option value="default">Default</option>
+                        </select>
+                    </div>
+                    
+                    <div class="toolbar-right">
+                        <button id="run-code" class="toolbar-btn primary">
+                            <i class="fas fa-play"></i>
+                            Run Code
+                        </button>
+                        <button id="reset-code" class="toolbar-btn">
+                            <i class="fas fa-undo"></i>
+                            Reset
+                        </button>
+                        <button id="save-code" class="toolbar-btn">
+                            <i class="fas fa-save"></i>
+                            Save
+                        </button>
+                        <button id="share-code" class="toolbar-btn">
+                            <i class="fas fa-share"></i>
+                            Share
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="editor-container">
+                    <textarea id="code-editor">// Welcome to StudyHub Coding Playground!
+// Write your JavaScript code here and click 'Run Code' to execute
+
+console.log("Hello, StudyHub!");
+
+// Try some examples:
+// 1. Variables and functions
+function greetStudent(name) {
+    return `Welcome to StudyHub, ${name}!`;
+}
+
+console.log(greetStudent("Student"));
+
+// 2. Arrays and loops
+const subjects = ["Math", "Science", "Programming"];
+subjects.forEach(subject => {
+    console.log(`Studying: ${subject}`);
+});
+</textarea>
+                </div>
+            </div>
+
+            <div class="output-section">
+                <div class="output-header">
+                    <h3><i class="fas fa-terminal"></i> Output</h3>
+                    <button id="clear-output" class="clear-btn">
+                        <i class="fas fa-trash"></i>
+                        Clear
+                    </button>
+                </div>
+                <div id="output" class="output-content">
+                    <div class="output-placeholder">
+                        <i class="fas fa-play-circle"></i>
+                        <p>Click "Run Code" to see your output here</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="challenges-section">
+            <h2><i class="fas fa-trophy"></i> Try These Challenges</h2>
+            <div class="challenges-grid">
+                <div class="challenge-card">
+                    <div class="challenge-header">
+                        <div class="challenge-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="challenge-difficulty easy">Easy</div>
+                    </div>
+                    <h3>FizzBuzz Classic</h3>
+                    <p>Print numbers 1-100, but for multiples of 3 print "Fizz", multiples of 5 print "Buzz", and multiples of both print "FizzBuzz".</p>
+                    <div class="challenge-tags">
+                        <span class="tag">Loops</span>
+                        <span class="tag">Conditionals</span>
+                    </div>
+                    <button class="load-challenge" data-challenge="fizzbuzz">
+                        <i class="fas fa-download"></i>
+                        Load Challenge
+                    </button>
+                </div>
+                
+                <div class="challenge-card">
+                    <div class="challenge-header">
+                        <div class="challenge-icon">
+                            <i class="fas fa-spell-check"></i>
+                        </div>
+                        <div class="challenge-difficulty easy">Easy</div>
+                    </div>
+                    <h3>Palindrome Check</h3>
+                    <p>Write a function that checks if a word reads the same backward as forward, ignoring spaces and case.</p>
+                    <div class="challenge-tags">
+                        <span class="tag">Strings</span>
+                        <span class="tag">Functions</span>
+                    </div>
+                    <button class="load-challenge" data-challenge="palindrome">
+                        <i class="fas fa-download"></i>
+                        Load Challenge
+                    </button>
+                </div>
+                
+                <div class="challenge-card">
+                    <div class="challenge-header">
+                        <div class="challenge-icon">
+                            <i class="fas fa-sort-numeric-up"></i>
+                        </div>
+                        <div class="challenge-difficulty medium">Medium</div>
+                    </div>
+                    <h3>Array Sorter</h3>
+                    <p>Implement different sorting algorithms (bubble sort, quick sort) and compare their performance.</p>
+                    <div class="challenge-tags">
+                        <span class="tag">Arrays</span>
+                        <span class="tag">Algorithms</span>
+                    </div>
+                    <button class="load-challenge" data-challenge="sorting">
+                        <i class="fas fa-download"></i>
+                        Load Challenge
+                    </button>
+                </div>
+                
+                <div class="challenge-card">
+                    <div class="challenge-header">
+                        <div class="challenge-icon">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                        <div class="challenge-difficulty medium">Medium</div>
+                    </div>
+                    <h3>Calculator App</h3>
+                    <p>Build a simple calculator that can perform basic arithmetic operations with proper error handling.</p>
+                    <div class="challenge-tags">
+                        <span class="tag">Functions</span>
+                        <span class="tag">Error Handling</span>
+                    </div>
+                    <button class="load-challenge" data-challenge="calculator">
+                        <i class="fas fa-download"></i>
+                        Load Challenge
+                    </button>
+                </div>
+                
+                <div class="challenge-card">
+                    <div class="challenge-header">
+                        <div class="challenge-icon">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <div class="challenge-difficulty hard">Hard</div>
+                    </div>
+                    <h3>Binary Tree Traversal</h3>
+                    <p>Implement and visualize different tree traversal methods (inorder, preorder, postorder).</p>
+                    <div class="challenge-tags">
+                        <span class="tag">Data Structures</span>
+                        <span class="tag">Recursion</span>
+                    </div>
+                    <button class="load-challenge" data-challenge="tree">
+                        <i class="fas fa-download"></i>
+                        Load Challenge
+                    </button>
+                </div>
+                
+                <div class="challenge-card">
+                    <div class="challenge-header">
+                        <div class="challenge-icon">
+                            <i class="fas fa-chess"></i>
+                        </div>
+                        <div class="challenge-difficulty hard">Hard</div>
+                    </div>
+                    <h3>N-Queens Problem</h3>
+                    <p>Solve the classic N-Queens problem using backtracking algorithm.</p>
+                    <div class="challenge-tags">
+                        <span class="tag">Backtracking</span>
+                        <span class="tag">Algorithms</span>
+                    </div>
+                    <button class="load-challenge" data-challenge="nqueens">
+                        <i class="fas fa-download"></i>
+                        Load Challenge
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="code-snippets-section">
+            <h2><i class="fas fa-code-branch"></i> Popular Code Snippets</h2>
+            <div class="snippets-grid">
+                <div class="snippet-card">
+                    <h4>Array Methods Cheat Sheet</h4>
+                    <button class="load-snippet" data-snippet="array-methods">Load Snippet</button>
+                </div>
+                <div class="snippet-card">
+                    <h4>Async/Await Examples</h4>
+                    <button class="load-snippet" data-snippet="async-await">Load Snippet</button>
+                </div>
+                <div class="snippet-card">
+                    <h4>DOM Manipulation Basics</h4>
+                    <button class="load-snippet" data-snippet="dom-basics">Load Snippet</button>
+                </div>
+                <div class="snippet-card">
+                    <h4>Python List Comprehensions</h4>
+                    <button class="load-snippet" data-snippet="list-comprehensions">Load Snippet</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3><i class="fas fa-graduation-cap"></i> StudyHub</h3>
+                <p>Empowering students through collaborative learning and shared knowledge.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="roadmap.html">Course Roadmaps</a></li>
+                    <li><a href="notes.html">Peer Notes</a></li>
+                    <li><a href="assignments.html">Assignment Guide</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Connect With Us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-discord"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 StudyHub | Created by Students for Students</p>
+        </div>
+    </footer>
+
+    <!-- Loading overlay for Python initialization -->
+    <div id="python-loading" class="loading-overlay" style="display: none;">
+        <div class="loading-spinner">
+            <i class="fas fa-python"></i>
+            <p>Initializing Python environment...</p>
+        </div>
+    </div>
+
+    <!-- Pyodide (for Python) -->
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.23.4/full/pyodide.js"></script>
+    
+    <!-- CodeMirror JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/javascript/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/python/python.min.js"></script>
+    
+    <!-- Main Scripts -->
+    <script src="playground.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
